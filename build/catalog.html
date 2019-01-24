@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0, user-scalable=0" id="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bulma Site</title>
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header сlass="header">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="images/logo.png" width="112" height="150" class="header-logo">
+                </a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Главная
+                    </a>
+
+                    <a class="navbar-item">
+                        О нас
+                    </a>
+                    <a class="navbar-item">
+                        Блог
+                    </a>
+                    <a class="navbar-item">
+                        Портфолио
+                    </a>
+                    <a class="navbar-item">
+                        Галерея
+                    </a>
+                    <a class="navbar-item">
+                        Каталог
+                    </a>
+                    <a class="navbar-item">
+                        Контакты
+                    </a>
+                    <a class="navbar-item">
+                        Лендинг
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="search">
+                            <form action="search" method="post">
+                                <div class="search-input">
+                                    <input type="search" class="input" placeholder="Поиск...">
+                                    <input type="submit" value="">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </nav>
+</header>
+<div class="container main-wrapper">
+    <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Catalog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Catalog</h1>
+            <div class="columns">
+                <div>
+                    <div class="tile is-vertical submenu-tile ">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box ">
+                                <div class="filters-block">
+                                    <p class="menu-label">Section:</p>
+                                    <hr>
+                                    <ul class="sub-filter menu-list">
+                                        <li><a href="#">Subcatalog 1</a>
+                                            <ul>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="menu-list">
+                                        <li><a href="#">Subcatalog 2</a>
+                                            <ul class="item-filter">
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-vertical submenu-tile filters-tile">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <div class="filters-block">
+                                    <p class="menu-label">Filter:</p>
+                                    <hr>
+                                    <p class="title">Producer</p>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        producer 1
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        producer 1
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        producer 1
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        producer 1
+                                    </label>
+                                    <hr>
+                                    <p class="title">Price</p>
+                                    <div class="multiply-block">
+                                        <p>
+                                            <input type="text" id="amount" class="amount" readonly style="">
+                                        </p>
+                                        <div id="slider-range" class="slider-range"></div>
+                                    </div>
+                                    <hr>
+                                        <div class="aside-button-block">
+                                            <button class="button">Search</button>
+                                            <button id="reset-filters" class="button">Clear</button>
+                                        </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-9">
+                    <div class="sort-section">
+                        <div class="sort-dropdown-block">
+                            <div id="sort-dropdown" class="dropdown sort-dropdown">
+                                <div class="dropdown-trigger">
+                                    <button id="drop-btn" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <span>Show</span>
+                                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                    <div class="dropdown-content">
+                                        <a href="#" class="dropdown-item">
+                                            10
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            20
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            30
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sort-dropdown2" class="dropdown sort-dropdown">
+                                <div class="dropdown-trigger">
+                                    <button id="drop-btn2" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <span>Order</span>
+                                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                                    <div class="dropdown-content">
+                                        <a href="#" class="dropdown-item">
+                                           by price
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                           by title
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns sorting-tiles">
+                            <div class="column is-4 sorting-values">
+                                <p>Show:</p>
+                                <a href="#" class="is-link">10 </a>
+                                <a href="#" class="is-link">20 </a>
+                                <a href="#" class="is-link">30 </a>
+                            </div>
+                            <div class="column is-4 is-offset-3-tablet is-offset-4-desktop sorting-values">
+                                <p>Order:</p>
+                                <a href="#" class="is-link">by price</a>
+                                <a href="#" class="is-link">by title</a>
+                            </div>
+                        </div>
+                        <hr class="sort-line">
+                    </div>
+
+                    <div class="columns  is-multiline">
+                        <div class="column is-one-third-desktop  is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=16" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer  card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=14" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=13" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=12" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=11" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=10" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=9" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=8" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=7" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=6" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=5" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div><div class="column is-one-third-desktop is-half-tablet">
+                        <div class="card catalog-card">
+                            <div class="card-image">
+                                <figure class="image is-3by2">
+                                    <img src="https://unsplash.it/300/200/?random&amp;pic=4" alt="">
+                                </figure>
+                            </div>
+                            <div class="card-description">
+                                <p class="title is-3 has-text-info">Item</p>
+                                <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p class="has-text-danger">Price: 230$</p>
+                            </div>
+                            <div class="card-footer card-catalog-footer">
+                                <a class="card-footer-item">
+                                    Buy Now!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=3" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=2" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-one-third-desktop is-half-tablet">
+                            <div class="card catalog-card">
+                                <div class="card-image">
+                                    <figure class="image is-3by2">
+                                        <img src="https://unsplash.it/300/200/?random&amp;pic=1" alt="">
+                                    </figure>
+                                </div>
+                                <div class="card-description">
+                                    <p class="title is-3 has-text-info">Item</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="has-text-danger">Price: 230$</p>
+                                </div>
+                                <div class="card-footer card-catalog-footer">
+                                    <a class="card-footer-item">
+                                        Buy Now!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer has-background-black">
+    <div class="container">
+        <div class="content has-text-centered has-text-white">
+            <p class="subtitle">Powered by the <a href="#">EVO CMS</a>&copy;</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/multrange.js"></script>
+</body>
+</html>

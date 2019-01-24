@@ -1,0 +1,85 @@
+//= template/head.html
+//= template/header.html
+
+<div class="container main-wrapper">
+    <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Catalog</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Catalog Item</a></li>
+        </ul>
+    </nav>
+    <div class="box">
+        <div class="columns">
+            <div class="column is-12">
+                <h1 class="title has-text-centered">
+                    Catalog Item
+                </h1>
+                <div class="columns">
+                    <div class="column is-6">
+                        <figure class="image is-1by1">
+                            <img src="https://unsplash.it/600/800/?random&pic=15"  alt="">
+                        </figure>
+                    </div>
+                    <div class="column is-6">
+                        <p class="catalog-item-article has-text-grey-light">
+                            Article: <span>2134124234</span>
+                        </p>
+                        <p class="has-text-right has-text-grey-light">
+                            Availability: <span class="has-text-success ">in stock</span>
+                        </p>
+                        <p class="title">
+                            Item Name
+                        </p>
+                        <p class="title is-1 has-text-danger">100500$.
+                            <span class="crossed-price has-text-grey-light subtitle">2200$.</span></p>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus asperiores autem consectetur corporis dolor esse ipsa laboriosam libero maxime modi molestias, nemo nobis pariatur quas, reiciendis repellendus tempora veritatis.
+                        </p>
+                        <hr>
+                        <div class="add-block">
+                            <div class="add-input">
+                                <button id="btnmin" disabled class="btnmin button">-</button>
+                                <input type="text" id="item-quantity" value="1" class="input has-text-centered is-large">
+                                <button id="btnplus" class="btnplus button">+</button>
+                            </div>
+                            <button class="button is-warning is-large has-text-white"><i class="fas fa-shopping-cart"></i>BUY NOW!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+                <ul>
+                    <li class="is-active">
+                        <a>Description</a>
+                    </li>
+                    <li>
+                        <a>Value</a>
+                    </li>
+                    <li>
+                        <a>Value</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="lis">
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+        </ul>
+    </div>
+</div>
+
+
+//= template/footer.html
+<script src="js/catalogItem.js"></script>
+</body>
+</html>
